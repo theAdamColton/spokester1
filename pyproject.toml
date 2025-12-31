@@ -1,0 +1,31 @@
+[project]
+name = "spokester-game"
+version = "0.1.0"
+description = "Urban cycling game with neural rendering"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "av>=16.0.1",
+    "einops>=0.8.1",
+    "jsonargparse>=4.44.0",
+    "matplotlib>=3.10.8",
+    "memfof",
+    "moderngl>=5.12.0",
+    "pandas>=2.3.3",
+    "pygame>=2.6.1",
+    "safetensors>=0.7.0",
+    "torch==2.9.1",
+    "torchcodec==0.9.1",
+    "torchvision>=0.24.1",
+    "tqdm>=4.67.1",
+    "transformers>=4.57.3",
+    "wandb[media]>=0.23.1",
+]
+
+[dependency-groups]
+dev = [
+    "bpython>=0.26",
+]
+
+[tool.uv.sources]
+memfof = { git = "https://github.com/msu-video-group/memfof.git", rev = "a51de9fc59c6fe20ba08e079372c7b583d58a712" }

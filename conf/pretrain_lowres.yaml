@@ -1,0 +1,24 @@
+conf:
+  train_video_real:
+    path: data/real_videos/hotline_toni_320p_24fps.mp4
+    height: 224
+    width: 224
+    duration: 8
+    seed: null
+    should_file_sampler_weight_by_duration: false
+    clip_decoder_should_random_start_seek: true
+    clip_decoder_frame_batch_size: 256
+    clip_decoder_frame_skip_range:
+    - 1
+    - 3
+    clip_decoder_num_samples_to_decode_range:
+    - 2
+    - 4
+    num_workers: 10
+    shuffle_size: 500
+    batch_size: 32
+    
+  num_lr_warmup_steps: 10000
+  num_lr_steady_steps: 190000
+  num_lr_cooldown_steps: 1
+

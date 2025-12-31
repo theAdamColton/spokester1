@@ -1,0 +1,72 @@
+conf:
+  val_video:
+    path: data/real_videos/hotline_toni_2k_24fps.mp4
+    height: 320
+    width: 320
+    duration: 128
+    seed: 42
+    should_file_sampler_weight_by_duration: false
+    clip_decoder_should_random_start_seek: true
+    clip_decoder_frame_batch_size: 256
+    clip_decoder_frame_skip_range:
+    - 1
+    - 3
+    clip_decoder_num_samples_to_decode_range:
+    - 1
+    - 1
+    num_workers: 0
+    shuffle_size: 0
+    batch_size: 1
+
+  dino_path_or_url: facebook/dinov3-vitb16-pretrain-lvd1689m
+
+  pixel_denoiser:
+    input_size: 1536
+    condition_input_size: 1536
+    condition_input_norm: null
+    num_blocks: 12
+    should_pin_adaln_projections: true
+    transformer:
+      hidden_size: 768
+      head_dim: 64
+      pre_norm: derfnorm
+      qk_norm: none
+      use_qv_bias: true
+      use_k_bias: false
+      use_proj_bias: true
+      use_attention_gating: true
+      mlp_mode: vanilla
+    norm_out: derfnorm
+
+  pixel_denoiser_temporal_window_size: 16
+  pixel_denoiser_token_drop_rate: 0.0
+  pixel_denoiser_drop_at_layer: 2
+  pixel_denoiser_undrop_at_layer: -2
+
+  pixel_denoiser_repa_weight: 1.0
+  pixel_denoiser_repa_depth: 6
+
+  patch_duration: 2
+  patch_side_length: 16
+
+  flow_matching_time_shift_dim_pixels: 614400
+
+  ema_beta: 0.9999
+  adamw_lr: 7e-5
+  muon_lr: 1e-4
+  muon_momentum: 0.95
+  optim_mode: adamw
+  adamw_betas:
+  - 0.9
+  - 0.999
+  adamw_weight_decay: 0.01
+  grad_clip_value: 1.0
+
+  validate_every_num_steps: 5000
+  wandb_log_every_num_steps: 50
+  save_checkpoint_every_num_steps: 500
+  max_num_checkpoints: 2
+  force_resume_new_wandb_run: true
+  device_str: cuda
+  dtype_str: bfloat16
+  should_compile: true
