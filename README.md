@@ -29,7 +29,7 @@ uv run python -m src.scripts.play_game_with_neural_graphics
 
 ### Training
 
-Training a DiT-Base with 200 million parameters for ~300k steps
+Training a DiT-Base with 100 million parameters for ~300k steps
 takes about 3 days using a single 3090 GPU.
 
 First, download Hotline Toni from YouTube
