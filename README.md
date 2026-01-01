@@ -4,6 +4,9 @@ Try to pedal your way through the congested boulevards of
 New York City at ever increasing speeds. The twist is
 the graphics pipeline is rendered using a diffusion transformer.
 
+
+![spokester-sample](https://github.com/user-attachments/assets/c6a28603-26be-41d0-af2b-b2e5a861b7f9)
+
 Using this codebase you can train your own neural graphics engine from scratch. You
 can also download my pretrained diffusion model and play the game.
 
